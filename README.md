@@ -4,7 +4,7 @@
 
 A simple roadmap that takes students from their **college syllabus → exact unit → topic → curated YouTube lecture/playlist**.
 
-[🚀 Live Demo](https://campus-roadmap-alpha.vercel.app/)
+[🚀 Live ](https://campus-roadmap-alpha.vercel.app/)
 
 </div>
 
