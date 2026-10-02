@@ -1,47 +1,42 @@
-🧭 Campus Roadmap
+# CAMPUS ROADMAP
 
-Your syllabus. Your topics. The right lecture.
+### Your syllabus. Your topics. Your YouTube lectures.
 
-Campus Roadmap is a college study platform that turns a syllabus into a simple learning path:
+A simple roadmap that takes students from their **college syllabus → exact unit → topic → curated YouTube lecture/playlist**.
 
-Year → Subject → Unit → Topic → YouTube
+[🚀 Live Demo](https://campus-roadmap-alpha.vercel.app/)
 
-No endless YouTube searching. Just follow the syllabus and jump straight to the lecture or playlist you need.
+</div>
 
-🔗 Live: https://campus-roadmap-alpha.vercel.app/
+---
 
-✨ What it does
+## 🎯 What is Campus Roadmap?
 
-Feature
+Students often waste time searching YouTube for lectures that actually match their college syllabus.
 
-Description
+**Campus Roadmap removes that search work.**
 
-📚 Syllabus Roadmap
+Choose your year → choose your subject → open a unit → pick a topic → jump straight to YouTube.
 
-Browse subjects and units in a clear structure
+---
 
-▶️ YouTube Lectures
+## ✨ Features
 
-Open curated videos and playlists directly on YouTube
+| Feature | What it does |
+|---|---|
+| 📚 Syllabus Roadmap | Organizes subjects, units and topics in one clear structure |
+| ▶️ YouTube Lectures | Opens curated videos and playlists directly on YouTube |
+| 🔎 Search | Find topics quickly across the roadmap |
+| 📝 Community Notes | Students can submit PDF notes for a subject/unit |
+| ✅ Admin Review | Notes stay pending until an admin approves them |
+| 🔐 Private Storage | Notes are stored in a private Supabase Storage bucket |
+| 🗑️ Admin Delete | Admin can permanently remove a submission and its PDF |
 
-🔎 Search
+---
 
-Find topics quickly across the roadmap
+## 🧭 How it works
 
-📝 Community Notes
-
-Students can submit PDF notes for a subject/unit
-
-✅ Admin Review
-
-Notes stay pending until an admin approves them
-
-🔐 Private Storage
-
-Notes are stored in a private Supabase bucket
-
-🗺️ How it works
-
+```text
 Choose Year
    ↓
 Choose Subject
@@ -51,64 +46,76 @@ Open Unit
 Pick Topic
    ↓
 Watch on YouTube
+```
 
-Community Notes
+### Community Notes
 
+```text
 Student uploads PDF
         ↓
       Pending
         ↓
    Admin reviews
-      ↙   ↘
-  Approve  Delete
-     ↓       ↓
-  Published Removed
+     ↙     ↘
+ Approve   Delete
+    ↓         ↓
+Published   Removed
+```
 
-🛠️ Tech Stack
+---
 
-Next.js 16 · React · TypeScript · Supabase · CSS · YouTube
+## 🛠️ Tech Stack
 
-Architecture
+**Frontend:** Next.js, React, TypeScript, CSS
 
-Next.js App Router for the web application
+**Backend:** Next.js Route Handlers + Supabase
 
-Supabase for database, authentication and private file storage
+**Storage:** Supabase Storage
 
-Server-side routes for secure uploads and admin actions
+**Deployment:** Vercel
 
-Signed URLs for temporary PDF access
+**Database:** Supabase PostgreSQL
 
-🔐 Security
+---
 
-Sensitive operations are handled on the server.
+## 🔐 Security
 
-Admin actions require authentication.
+- Public users can submit notes, but submissions start as **pending**.
+- Direct anonymous Storage uploads are blocked.
+- PDF uploads go through a **server-side Next.js route**.
+- Admin actions are protected by authentication and an admin user check.
+- PDFs stay in a **private bucket** and are accessed through short-lived signed URLs.
+- `.env.local` is excluded from Git.
 
-The Supabase secret key stays server-side.
+---
 
-Direct anonymous Storage uploads are disabled.
+## 🚀 Run locally
 
-PDFs are kept in a private bucket.
-
-PDF access uses short-lived signed URLs.
-
-Deleting a note removes its database record and stored PDF.
-
-Never commit .env.local or expose the Supabase secret key.
-
-🚀 Run locally
-
+```bash
 npm install
 npm run dev
+```
 
 Then open:
 
+```text
 http://localhost:3000
+```
 
-Create a .env.local file with your Supabase and admin environment variables before running the project.
+---
 
-🎯 Why Campus Roadmap?
+## 💡 Why it exists
 
-Students often know what is in their syllabus, but waste time finding what to watch for each topic.
+**Less searching. Less confusion. More studying.**
 
-Campus Roadmap connects those two things in one place — making the journey from syllabus to lecture simple.
+Campus Roadmap is built to make syllabus-based exam preparation faster and more focused.
+
+---
+
+<div align="center">
+
+### Made for students who just want to study, not search.
+
+⭐ Star the repo if you find it useful.
+
+</div>
